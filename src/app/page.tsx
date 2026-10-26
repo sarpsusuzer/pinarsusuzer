@@ -52,21 +52,23 @@ const toolSkills = [
 
 export default function Home() {
   return (
-    <main className="mx-auto flex min-h-full w-full max-w-[1440px] flex-col items-center gap-6 px-6 pb-12 pt-9 sm:gap-8 sm:px-9 sm:pb-16 sm:pt-[52px] lg:px-[58px] xl:px-[72px]">
+    <main className="mx-auto min-h-full w-full max-w-[1440px] px-6 pb-12 pt-9 sm:px-9 sm:pb-16 sm:pt-[52px] lg:px-[58px] xl:px-[72px]">
+      {/* Shared column — every section shares one width so left/right edges align */}
+      <div className="mx-auto flex w-full max-w-[1324px] flex-col gap-6 sm:gap-8">
       {/* Intro */}
       <section
         aria-label="Introduction"
-        className="flex w-full max-w-[1324px] flex-col gap-6 lg:flex-row lg:items-start lg:gap-6"
+        className="grid w-full grid-cols-1 gap-6 lg:grid-cols-[minmax(0,480fr)_minmax(0,320fr)_minmax(0,476fr)] lg:items-start"
       >
         {/* Portrait */}
-        <div className="card flex w-full shrink-0 flex-col gap-[18px] p-[30px] lg:w-[480px]">
+        <div className="card flex min-w-0 flex-col gap-[18px] p-[30px]">
           <div className="relative aspect-[420/460] w-full overflow-hidden rounded-2xl sm:aspect-[636/430] lg:aspect-[420/460]">
             <Image
               src="/images/portrait.png"
               alt="Portrait of Pınar Susüzer"
               fill
               priority
-              sizes="(max-width: 1024px) 100vw, 420px"
+              sizes="(max-width: 1024px) 100vw, 36vw"
               className="object-cover object-[center_20%]"
             />
           </div>
@@ -81,7 +83,7 @@ export default function Home() {
         </div>
 
         {/* About + Links */}
-        <div className="flex w-full flex-col gap-6 lg:w-[320px] lg:shrink-0">
+        <div className="flex min-w-0 flex-col gap-6">
           <div className="card flex flex-col gap-[18px] p-[30px]">
             <p className="section-label">About Her</p>
             <div className="grid gap-4 text-[13px] font-light leading-[21px] tracking-[0.65px] text-ink-soft md:grid-cols-2 lg:grid-cols-1">
@@ -150,7 +152,7 @@ export default function Home() {
         </div>
 
         {/* Supporting info */}
-        <div className="flex w-full flex-col gap-6 lg:w-[476px] lg:shrink-0">
+        <div className="flex min-w-0 flex-col gap-6">
           <div className="card flex flex-col gap-[18px] p-[30px]">
             <p className="section-label">Now</p>
             <p className="text-[16px] leading-[23px] tracking-[-0.05px] text-ink">
@@ -195,7 +197,7 @@ export default function Home() {
       {/* Experiences */}
       <section
         aria-label="Experiences"
-        className="card w-full max-w-[1324px] p-4 sm:p-6 lg:p-8"
+        className="card w-full p-4 sm:p-6 lg:p-8"
       >
         <div className="flex flex-col gap-8 px-2 pb-12 pt-6 sm:px-3 lg:px-5">
           <h2 className="section-title">Experiences</h2>
@@ -288,7 +290,7 @@ export default function Home() {
       {/* Skills */}
       <section
         aria-label="Skills"
-        className="card w-full max-w-[1324px] p-4 sm:p-6 lg:p-8"
+        className="card w-full p-4 sm:p-6 lg:p-8"
       >
         <div className="flex flex-col gap-10 px-2 pb-12 pt-6 sm:px-3 lg:px-5">
           <h2 className="section-title">Skills</h2>
@@ -307,7 +309,7 @@ export default function Home() {
       {/* Education */}
       <section
         aria-label="Education"
-        className="card w-full max-w-[1324px] p-4 sm:p-6 lg:p-8"
+        className="card w-full p-4 sm:p-6 lg:p-8"
       >
         <div className="flex flex-col gap-[34px] px-2 pb-12 pt-6 sm:px-3 lg:px-5">
           <h2 className="section-title">Education</h2>
@@ -352,6 +354,7 @@ export default function Home() {
           2026
         </span>
       </footer>
+      </div>
     </main>
   );
 }
