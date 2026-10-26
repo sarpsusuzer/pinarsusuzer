@@ -4,9 +4,10 @@ A 1:1 implementation of the [Pınar Framer Website](https://www.figma.com/design
 
 ## Stack
 
-- Next.js (App Router) + TypeScript
+- Next.js (App Router) + TypeScript (static export)
 - Tailwind CSS v4
 - Fonts: DM Sans, Geist Mono, Cormorant
+- Hosting: GitHub Pages (`www.pinarsusuzer.com`)
 
 ## Run locally
 
@@ -15,16 +16,20 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3456](http://localhost:3456) (or the port shown in the terminal).
+Open [http://localhost:3456](http://localhost:3456).
 
 ## Scripts
 
-| Command         | Description              |
-| --------------- | ------------------------ |
-| `npm run dev`   | Start development server |
-| `npm run build` | Production build         |
-| `npm run start` | Serve production build   |
-| `npm run lint`  | Run ESLint               |
+| Command         | Description                          |
+| --------------- | ------------------------------------ |
+| `npm run dev`   | Start development server             |
+| `npm run build` | Static export to `out/`              |
+| `npm run start` | Serve the exported `out/` directory  |
+| `npm run lint`  | Run ESLint                           |
+
+## Deploy
+
+Pushes to `main` on `pinarsusuzer/pinarsusuzer` run `.github/workflows/deploy.yml`, which builds the static site and deploys to GitHub Pages. The custom domain is `www.pinarsusuzer.com` (see `public/CNAME`).
 
 ## Design notes
 
