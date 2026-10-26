@@ -29,7 +29,15 @@ Open [http://localhost:3456](http://localhost:3456).
 
 ## Deploy
 
-Pushes to `main` on `pinarsusuzer/pinarsusuzer` run `.github/workflows/deploy.yml`, which builds the static site and deploys to GitHub Pages. The custom domain is `www.pinarsusuzer.com` (see `public/CNAME`).
+Live on GitHub Pages: **https://sarpsusuzer.github.io/pinarsusuzer/**
+
+Source: [github.com/sarpsusuzer/pinarsusuzer](https://github.com/sarpsusuzer/pinarsusuzer) (`gh-pages` branch).
+
+To serve **www.pinarsusuzer.com** from this deploy:
+
+1. In the `pinarsusuzer/pinarsusuzer` GitHub repo (where the domain is currently claimed), remove the Pages custom domain / `CNAME`.
+2. Point DNS for `www` away from Framer (`sites.framer.app`) to GitHub Pages (`sarpsusuzer.github.io`).
+3. Rebuild without `basePath` (`NEXT_PUBLIC_BASE_PATH=""`) and add `public/CNAME` → `www.pinarsusuzer.com`.
 
 ## Design notes
 
