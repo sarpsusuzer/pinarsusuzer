@@ -46,8 +46,8 @@ export function ExperienceItem({
                   {company} ↗
                 </a>
               ) : (
-                <p className="font-medium leading-[17px] tracking-[0.05px] text-ink">
-                  {company}
+                <p className="font-medium leading-[17px] tracking-[0.05px] text-ink underline decoration-solid underline-offset-2">
+                  {company} ↗
                 </p>
               )
             ) : null}
